@@ -1,4 +1,5 @@
-## Browser Docker Installer
+## Browser installer (docker)
+
 # Install Firefox & Chromium with docker
 
 This Bash script provides an interactive menu to install Chromium and Firefox browsers using Docker containers.
