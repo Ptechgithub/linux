@@ -2,13 +2,17 @@
 
 # Check if Docker is installed
 if ! command -v docker &> /dev/null; then
-    echo "Docker is not installed."
-    read -p "Press Enter to install Docker..."
-    echo "Installing Docker..."
-    curl -fsSL https://get.docker.com -o get-docker.sh
-    sh get-docker.sh
-    rm get-docker.sh
-    echo "Docker installed successfully."
+    read -p "Docker is not installed. Do you want to install Docker? (yes/no): " choice
+    if [ "$choice" = "yes" ]; then
+        echo "Installing Docker..."
+        curl -fsSL https://get.docker.com -o get-docker.sh
+        sh get-docker.sh
+        rm get-docker.sh
+        echo "Docker installed successfully."
+    else
+        echo "Docker is not installed."
+        exit 1
+    fi
 else
     echo "Docker is already installed."
 fi
