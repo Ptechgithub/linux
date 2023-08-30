@@ -17,8 +17,8 @@ install_chromium() {
     if docker ps -a | grep -q chromium; then
         echo "Chromium is already installed."
     else
-        read -p "Enter username for Chromium: " USERNAME
-        read -sp "Enter password for Chromium: " PASSWORD
+        read -p "Enter username for Chromium : " USERNAME
+        read -sp "Enter password for Chromium : " PASSWORD
         echo
         echo "Installing Chromium..."
         docker run -d \
@@ -60,8 +60,8 @@ install_firefox() {
     if docker ps -a | grep -q firefox; then
         echo "Firefox is already installed."
     else
-        read -p "Enter username for Firefox: " USERNAME
-        read -sp "Enter password for Firefox: " PASSWORD
+        read -p "Enter username for Firefox : " USERNAME
+        read -sp "Enter password for Firefox : " PASSWORD
         echo
         echo "Installing Firefox..."
         docker run -d \
@@ -72,8 +72,8 @@ install_firefox() {
             -e TZ=Etc/UTC \
             -e CUSTOM_USER=$USERNAME \
             -e PASSWORD=$PASSWORD \
-            -p 4000:4000 `# Adjust ports to avoid conflict with Chromium` \
-            -p 4001:4001 `# Adjust ports to avoid conflict with Chromium` \
+            -p 4000:3000 \
+            -p 4001:3001 \
             -v /path/to/config:/config \
             --shm-size="1gb" \
             --restart unless-stopped \
@@ -103,14 +103,14 @@ echo "1) Install Chromium"
 echo "2) Uninstall Chromium"
 echo "3) Install Firefox"
 echo "4) Uninstall Firefox"
-echo "0) Exit"
-read -p "Please choose: " choice
+echo "5) Exit"
+read -p "Please choose : " choice
 
 case $choice in
     1) install_chromium ;;
     2) uninstall_chromium ;;
     3) install_firefox ;;
     4) uninstall_firefox ;;
-    0) exit ;;
+    5) exit ;;
     *) echo "Invalid choice. Please select a valid option." ;;
 esac
