@@ -13,13 +13,15 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/linux/main/brows
 docker( auto install)
 
 Open Chromium:
+
 ``
-yourip:3000
+http:yourip:3000
 ``
 
 Open Firefox:
+
 ``
-yourip:4000
+http:yourip:4000
 ``
 
 ![1](https://raw.githubusercontent.com/Ptechgithub/linux/main/media/1.jpg)
