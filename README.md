@@ -12,8 +12,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/linux/main/brows
 ## Prerequisite: 
 docker( auto install)
 
-
-
+-
 
 Open Chromium:
 
