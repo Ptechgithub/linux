@@ -33,7 +33,7 @@ install_chromium() {
             -e CHROME_CLI=https://www.youtube.com/@IR_TECH/ `#optional` \
             -p 3000:3000 \
             -p 3001:3001 \
-            -v /path/to/config:/config \
+            -v /root/chromium/config:/config \
             --shm-size="1gb" \
             --restart unless-stopped \
             lscr.io/linuxserver/chromium:latest
@@ -76,7 +76,7 @@ install_firefox() {
             -e PASSWORD=$PASSWORD \
             -p 4000:3000 \
             -p 4001:3001 \
-            -v /path/to/config:/config \
+            -v /root/firefox/config:/config \
             --shm-size="1gb" \
             --restart unless-stopped \
             lscr.io/linuxserver/firefox:latest
